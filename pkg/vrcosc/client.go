@@ -1,10 +1,10 @@
-package osc
+package vrcosc
 
 import "github.com/hypebeast/go-osc/osc"
 
 type Client struct {
-	sender   *osc.Client
-	receiver *osc.Client
+	Sender   *osc.Client
+	Receiver *osc.Client
 }
 
 type ClientOptions struct {
@@ -25,7 +25,7 @@ func New(opts *ClientOptions) *Client {
 		_opts = defaultClientOptions
 	}
 	return &Client{
-		sender:   osc.NewClient(_opts.Hostname, _opts.SenderPort),
-		receiver: osc.NewClient(_opts.Hostname, _opts.ReceiverPort),
+		Sender:   osc.NewClient(_opts.Hostname, _opts.SenderPort),
+		Receiver: osc.NewClient(_opts.Hostname, _opts.ReceiverPort),
 	}
 }
